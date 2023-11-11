@@ -6,7 +6,10 @@ import unittest
 
 
 class TestBaseModel(unittest.TestCase):
+    """Unit tests for the Base class"""
+
     def setUp(self):
+        """Set up the class"""
         self.bm1 = BaseModel()
         self.bm2 = BaseModel()
 
