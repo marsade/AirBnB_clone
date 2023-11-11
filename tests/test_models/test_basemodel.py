@@ -17,5 +17,7 @@ class TestBaseModel(unittest.TestCase):
             self.assertIsInstance(self.bm1.created_at, datetime.datetime)
 
       def test_uuid(self):
-            pass
-      
+            bm2 = BaseModel()
+            self.assertTrue(hasattr(self.bm1, 'id'))
+            self.assertIsInstance(self.bm1.id, str)
+            self.assertNotEqual(self.bm1.id, bm2.id)
