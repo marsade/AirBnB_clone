@@ -4,6 +4,6 @@ import unittest
 
 
 class TestFileStorage(unittest.TestCase):
-      """Test file storage"""
+    """Test file storage"""
 
-      pass
+    pass
