@@ -21,14 +21,14 @@ class BaseModel:
         self.updated_at = datetime.now()
         if kwargs is not None:
             for key, value in kwargs.items():
-                if key == "__class__":
+                if key == '__class__':
                     pass
                 elif key == "created_at":
                     self.created_at = datetime.strptime(value,
-                                                        "%Y-%m-%dT%H:%M:%S.%f") # convert to datetime
+                                                        '%Y-%m-%dT%H:%M:%S.%f')
                 elif key == "updated_at":
                     self.updated_at = datetime.strptime(value,
-                                                        "%Y-%m-%dT%H:%M:%S.%f")
+                                                        '%Y-%m-%dT%H:%M:%S.%f')
                 else:
                     setattr(self, key, value)
 
@@ -46,4 +46,4 @@ class BaseModel:
 
     def __str__(self):
         """Returns a string representation of the object"""
-        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
+        return f'[{self.__class__.__name__}] ({self.id}) {self.__dict__}'
