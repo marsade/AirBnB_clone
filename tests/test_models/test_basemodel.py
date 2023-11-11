@@ -10,7 +10,7 @@ class TestBaseModel(unittest.TestCase):
             self.bm1 = BaseModel()
 
       def tearDown(self):
-            self.bm1.cleanup()
+            del self.bm1
 
       def test_created_at(self):
             self.assertTrue(hasattr(self.bm1, 'created_at'))
