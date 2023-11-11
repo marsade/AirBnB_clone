@@ -3,13 +3,15 @@
 import datetime
 import uuid
 
+
 class BaseModel:
     """Base class for all models
-      
+
     Attributes:
         id(str): string containing instance uuid
         created_at(datetime): current datetime when an instance is created
-        updated_at(datetime): current datetime and updated every time object is changed
+        updated_at(datetime): current datetime and updated
+        every time object is changed
     """
     def __init__(self):
         """Initialize the class instance"""
