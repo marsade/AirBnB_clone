@@ -1,23 +1,36 @@
 #!/usr/bin/python3
 """This module contains the base class for all classes"""
-import datetime
+from datetime import datetime
 import uuid
 
 
 class BaseModel:
-    """Base class for all models
+    """Base class for all models"""
 
-    Attributes:
-        id(str): string containing instance uuid
-        created_at(datetime): current datetime when an instance is created
-        updated_at(datetime): current datetime and updated
-        every time object is changed
-    """
-    def __init__(self):
-        """Initialize the class instance"""
+    def __init__(self, *args, **kwargs):
+        """Initialize the class instance
+
+        Attributes:
+            created_at(datetime): current datetime when an instance is created
+            id(str): string containing instance uuid
+            updated_at(datetime): current datetime and updated
+            every time object is changed
+        """
         self.id = str(uuid.uuid4())
-        self.created_at = datetime.datetime.now()
-        self.updated_at = datetime.datetime.now()
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
+        if kwargs is not None:
+            for key, value in kwargs.items():
+                if key == "__class__":
+                    pass
+                elif key == "created_at":
+                    self.created_at = datetime.strptime(value,
+                                                        "%Y-%m-%dT%H:%M:%S.%f") # convert to datetime
+                elif key == "updated_at":
+                    self.updated_at = datetime.strptime(value,
+                                                        "%Y-%m-%dT%H:%M:%S.%f")
+                else:
+                    setattr(self, key, value)
 
     def save(self):
         """updates updated_at information"""
