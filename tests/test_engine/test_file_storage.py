@@ -8,3 +8,6 @@ class TestFileStorage(unittest.TestCase):
     """Test file storage"""
 
     pass
+
+if __name__ == "__main__":
+      unittest.main()

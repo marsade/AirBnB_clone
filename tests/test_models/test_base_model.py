@@ -39,3 +39,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(new_bm1, dict)
         self.assertIn('__class__', new_bm1)
         self.assertEqual(new_bm1.get('__class__'), 'BaseModel')
+
+if __name__ == '__main__':
+      unittest.main()
