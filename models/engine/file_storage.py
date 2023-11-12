@@ -32,8 +32,8 @@ class FileStorage(BaseModel):
             with open(self.__file_path, 'r') as file:
                 deserialized = json.load(file)
             for key, value in deserialized.items():
-                  class_name, obj_id = key.split('.')
-                  class_type = globals().get(class_name)
-                  self.__objects[key] = class_type(**value)
+                class_name, obj_id = key.split('.')
+                class_type = globals().get(class_name)
+                self.__objects[key] = class_type(**value)
         except FileNotFoundError:
             pass
