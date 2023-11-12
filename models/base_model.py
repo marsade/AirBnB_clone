@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module contains the base class for all classes"""
 from datetime import datetime
+from models import storage
 import uuid
 
 
