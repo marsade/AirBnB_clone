@@ -3,11 +3,11 @@
 from datetime import datetime
 import uuid
 
-
 class BaseModel:
     """Base class for all models"""
 
     def __init__(self, *args, **kwargs):
+        from models import storage
         """Initialize the class instance
 
         Attributes:

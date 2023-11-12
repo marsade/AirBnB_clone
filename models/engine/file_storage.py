@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """File Storage System"""
-from models.base_model import BaseModel
 import json
 
 
+from /models.base_model import BaseModel
 class FileStorage(BaseModel):
     """File Storage System Class"""
     __file_path = "file.json"
