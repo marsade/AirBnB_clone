@@ -10,7 +10,7 @@ class TestFileStorageInstantiation(unittest.TestCase):
     """Test file storage instantiation"""
 
     def setUp(self):
-       self.fm1 = FileStorage()
+        self.fm1 = FileStorage()
 
     def tearDown(self):
         del self.fm1
@@ -24,13 +24,14 @@ class TestFileStorageInstantiation(unittest.TestCase):
     def test_file_path_is_private_str(self):
         self.assertIsInstance(self.fm1._FileStorage__file_path, str)
 
+
 class TestFileStorageMethods(unittest.TestCase):
     """Test FileStorage methods"""
 
     def setUp(self):
         self.fm = FileStorage()
         self.bm = BaseModel()
-       
+
     def tearDown(self):
         del self.fm
         del self.bm
@@ -40,6 +41,7 @@ class TestFileStorageMethods(unittest.TestCase):
 
     def test(self):
         pass
+
 
 if __name__ == '__main__':
     unittest.main()
