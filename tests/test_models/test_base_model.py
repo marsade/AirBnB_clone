@@ -22,7 +22,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(hasattr(self.bm1, 'created_at'))
         self.assertIsInstance(self.bm1.created_at, datetime.datetime)
 
-    def test_updated_at(self):
+    def test_save(self):
         """Test updated_at method"""
         self.assertTrue(hasattr(self.bm1, 'updated_at'))
         self.assertIsInstance(self.bm1.updated_at, datetime.datetime)
@@ -39,6 +39,12 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(new_bm1, dict)
         self.assertIn('__class__', new_bm1)
         self.assertEqual(new_bm1.get('__class__'), 'BaseModel')
+
+    def test_str(self):
+        """Test __str__ method"""
+        self.assertEqual(f'[{self.bm1.__class__.__name__}]
+                         ({self.bm1.id}) {self.bm1.__dict__}',
+                         self.bm1.__str__())
 
 
 if __name__ == '__main__':
