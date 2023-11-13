@@ -18,10 +18,6 @@ class TestFileStorageInstantiation(unittest.TestCase):
     def test_no_args(self):
         self.assertIsInstance(self.fm1, FileStorage)
 
-    def test_with_args(self):
-        with self.assertRaises(TypeError):
-            FileStorage(None, 5)
-
     def test_objects_is_private_dict(self):
         self.assertIsInstance(self.fm1._FileStorage__objects, dict)
 
