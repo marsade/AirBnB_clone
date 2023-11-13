@@ -11,7 +11,7 @@ class FileStorage(BaseModel):
 
     def all(self):
         """Return all objects"""
-        return self.objects
+        return self.__objects
 
     def new(self, obj):
         """Add a new object to the objects dictionary"""
@@ -24,7 +24,7 @@ class FileStorage(BaseModel):
         for key, obj in self.__objects.items():
             serialized_obj[key] = obj.to_dict()
         with open(self.__file_path, 'w', encoding="utf-8") as f:
-            json.dump(serialized_obj, self.__file_path)
+            json.dump(serialized_obj, f)
 
     def reload(self):
         """Deserializes and Reloads objects to the objects dict"""
