@@ -42,9 +42,12 @@ class TestBaseModel(unittest.TestCase):
 
     def test_str(self):
         """Test __str__ method"""
-        self.assertEqual(f'[{self.bm1.__class__.__name__}]
-                         ({self.bm1.id}) {self.bm1.__dict__}',
-                         self.bm1.__str__())
+        self.assertEqual(
+            f"[{self.bm1.__class__.__name__}] "
+            f"({self.bm1.id}) {self.bm1.__dict__}",
+            self.bm1.__str__()
+        )
+
 
 
 if __name__ == '__main__':
