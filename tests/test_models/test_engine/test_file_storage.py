@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Test cases for the File Storage System"""
 import unittest
-# import models
+import models
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 
