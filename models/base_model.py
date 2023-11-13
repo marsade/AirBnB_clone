@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """This module contains the base class for all classes"""
+import models
 from datetime import datetime
 import uuid
+
 
 class BaseModel:
     """Base class for all models"""
 
     def __init__(self, *args, **kwargs):
-        from models import storage
         """Initialize the class instance
 
         Attributes:
