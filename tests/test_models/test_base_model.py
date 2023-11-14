@@ -23,7 +23,8 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(self.bm1.created_at, datetime.datetime)
 
     def test_save(self):
-        """Test updated_at method"""
+        """Test save method"""
+        self.bm1.save()
         self.assertTrue(hasattr(self.bm1, 'updated_at'))
         self.assertIsInstance(self.bm1.updated_at, datetime.datetime)
 
@@ -35,6 +36,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict(self):
         """Test to_dict method"""
+        self.bm1.save()
         new_bm1 = self.bm1.to_dict()
         self.assertIsInstance(new_bm1, dict)
         self.assertIn('__class__', new_bm1)
