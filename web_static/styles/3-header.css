@@ -4,6 +4,8 @@ header{
     width: 100%;
     border-bottom: 1px #CCCCCC solid;
 }
-header>img{
+.header-img{
     margin-left: 20px;
+    background: no-repeat url("../images/logo.png");
+    height: 100%;
 }
