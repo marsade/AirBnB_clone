@@ -1,0 +1,20 @@
+@import url("4-common.css");
+@import url("3-header.css");
+@import url("3-footer.css");
+
+.location {
+    border-right: 1px #DDDDDD solid;
+}
+.location, .amenities{
+    height: 100%;
+    width: 25%;
+    text-align: left;
+    padding: 10px 0;
+}
+.location h3, .amenities h3 {
+    font-weight: 600;
+}
+.location h4, .amenities h4 {
+    font-weight: 400;
+    font-size: 14px;
+}
