@@ -5,7 +5,7 @@
     border: 1px #DDDDDD solid;
     border-radius: 4px;
     display: flex;
-    justify-content: right;
+    justify-content: space-around;
     align-items: center;
 }
 button {
