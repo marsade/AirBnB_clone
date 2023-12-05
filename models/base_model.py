@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module contains the base class for all classes"""
-from models import storage
+import models
 from datetime import datetime
 import uuid
 
@@ -19,7 +19,7 @@ class BaseModel:
         """
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
-        if kwargs:
+        if len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key == '__class__':
                     pass
@@ -32,11 +32,11 @@ class BaseModel:
                 else:
                     setattr(self, key, value)
         else:
-            storage.new(self)
+            models.storage.new(self)
 
     def save(self):
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dict representation of the Base object"""
