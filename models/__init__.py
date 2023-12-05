@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Init file for the models package"""
-from models.engine.file_storage import FileStorage
+import models.engine.file_storage
 
-storage = FileStorage()
+storage = models.engine.file_storage.FileStorage()
 storage.reload()

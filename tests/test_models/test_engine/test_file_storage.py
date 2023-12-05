@@ -45,8 +45,15 @@ class TestFileStorageMethods(unittest.TestCase):
 
     def test_all_return(self):
         """Test the all methods"""
-        self.assertIsInstance(self.fm.all(), dict)
+        self.assertIsInstance(models.storage.all(), dict)
+        # self.assertTrue(self.fm.all())
 
+    def test_new_no_args(self):
+        with self.assertRaises(TypeError):
+            self.fm.new()
+
+    def test_new_with_args(self):
+        models.storage(self.bm)
     def test(self):
         pass
 
