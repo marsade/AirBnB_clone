@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This is the console for the json file storage"""
 import cmd
 import models
 
