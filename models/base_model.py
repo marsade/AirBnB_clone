@@ -19,7 +19,7 @@ class BaseModel:
         """
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
-        if kwargs is not None:
+        if len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key == '__class__':
                     pass
@@ -31,9 +31,12 @@ class BaseModel:
                                                         '%Y-%m-%dT%H:%M:%S.%f')
                 else:
                     setattr(self, key, value)
+        else:
+            models.storage.new(self)
 
     def save(self):
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dict representation of the Base object"""
