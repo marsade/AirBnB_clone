@@ -54,6 +54,7 @@ class TestFileStorageMethods(unittest.TestCase):
 
     def test_new_with_args(self):
         models.storage(self.bm)
+
     def test(self):
         pass
 
