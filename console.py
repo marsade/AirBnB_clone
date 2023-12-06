@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """This is the console for the json file storage"""
 import cmd
-import models
+from models import storage
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
@@ -12,7 +13,7 @@ class HBNBCommand(cmd.Cmd):
 
     def parse(self, line):
         return line.split()
-    
+
     def do_EOF(self, line):
         print("")
         return True
@@ -26,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, line):
-        """Creates a new instance of a class, 
+        """Creates a new instance of a class,
         saves it (to the JSON file) and prints the id.
         Ex: create <class>
         """
@@ -36,6 +37,9 @@ class HBNBCommand(cmd.Cmd):
         elif words[0] not in self.__classes:
             print("** class doesn't exist **")
         else:
-            pass
+            print(eval(words[0])().id)
+            storage.save()
+
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
