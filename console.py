@@ -41,6 +41,8 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_show(self, line):
+        """Prints the string representation of an instance
+        Ex: show <class> <class id>"""
         words = self.parse(line)
         objdict = storage.all()
         if len(words) < 1:
@@ -52,7 +54,7 @@ class HBNBCommand(cmd.Cmd):
         elif "{}.{}".format(words[0], words[1]) not in objdict:
             print("** no instance found **")
         else:
-            print(eval(words[0])())
+            print(objdict["{}.{}".format(words[0], words[1])])
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
