@@ -10,6 +10,9 @@ class HBNBCommand(cmd.Cmd):
         "BaseModel"
     ]
 
+    def parse(self, line):
+        return line.split()
+    
     def do_EOF(self, line):
         print("")
         return True
@@ -27,10 +30,10 @@ class HBNBCommand(cmd.Cmd):
         saves it (to the JSON file) and prints the id.
         Ex: create <class>
         """
-        class_name = line.split()[0]
+        words = self.parse(line)
         if len(line) == 0:
             print("** class name missing **")
-        elif class_name not in self.__classes:
+        elif words[0] not in self.__classes:
             print("** class doesn't exist **")
         else:
             pass
