@@ -95,6 +95,14 @@ class HBNBCommand(cmd.Cmd):
                     objlist.append(obj_str)
             print(objlist)
 
+    def do_update(self, line):
+        """Update an instance based on the class name by adding or 
+        updating attribute"""
+        words = self.parse(line)
+        if len(words) > 5:
+            words = words[0:5]
+        print(words)   
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
