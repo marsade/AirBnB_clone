@@ -99,10 +99,20 @@ class HBNBCommand(cmd.Cmd):
         """Update an instance based on the class name by adding or 
         updating attribute"""
         words = self.parse(line)
+        objdict = storage.all()
         if len(words) > 5:
             words = words[0:5]
-        print(words)   
 
+        if len(words) < 1:
+            print("** class name missing **")
+        elif len(words) < 2:
+            print("** instance id missing **")
+        elif words[0] not in self.__classes:
+            print("** class doesn't exist **")
+        elif "{}.{}".format(words[0], words[1]) not in objdict:
+            print("** no instance found **")
+        else:
+            pass
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
