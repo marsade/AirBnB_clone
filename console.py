@@ -8,7 +8,8 @@ from models.base_model import BaseModel
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
     __classes = [
-        "BaseModel"
+        "BaseModel",
+        "User"
     ]
 
     def parse(self, line):
